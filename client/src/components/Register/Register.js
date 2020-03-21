@@ -220,7 +220,7 @@ const Register = ({ handleClose }) => {
           <p>
             <span
               onClick={e => setStage(1)}
-              className={stage == 1 && "currentStage"}
+              className={stage == 1 ? "currentStage" : ""}
             >
               שלב ראשון
             </span>
@@ -246,163 +246,7 @@ const Register = ({ handleClose }) => {
           onSubmit(registerForm);
         }}
       >
-        <Group dir="rtl">
-          {currentStage()}
-          {/* <div className="_row">
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="email"
-                value={registerForm.email}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">אימייל</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="phone"
-                value={registerForm.phone}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">טלפון</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="groomName"
-                value={registerForm.groomName}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שם החתן</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="brideName"
-                value={registerForm.brideName}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שם הכלה</span>
-            </label>
-          </div>
-          <div className="_row">
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="hallName"
-                value={registerForm.hallName}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שם אולם האירועים</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="hallAddress"
-                value={registerForm.hallAddress}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">כתובת אולם האירועים</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="eventDate"
-                value={registerForm.eventDate}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">תאריך האירוע</span>
-            </label>
-
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="greetingTime"
-                value={registerForm.greetingTime}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שעת קבלת פנים</span>
-            </label>
-          </div>
-          <div className="_row">
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="weddingTime"
-                value={registerForm.weddingTime}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שעת חופה</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="bridePName"
-                value={registerForm.bridePName}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שם הורי הכלה</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="groomPName"
-                value={registerForm.groomPName}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">שם הורי החתן</span>
-            </label>
-          </div>
-          <div className="_row center">
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="password"
-                type="password"
-                value={registerForm.password}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">סיסמא</span>
-            </label>
-            <label dir="rtl">
-              <input
-                placeholder=" "
-                dir="rtl"
-                name="password2"
-                type="password"
-                value={registerForm.password2}
-                onChange={e => handleRegister(e)}
-                required
-              />
-              <span dir="rtl">אימות סיסמא</span>
-            </label>
-          </div> */}
-        </Group>
+        <Group dir="rtl">{currentStage()}</Group>
         {stage == 3 ? (
           <DialogActions>
             <BtnGroup>
@@ -425,7 +269,7 @@ const Register = ({ handleClose }) => {
                 }}
               >
                 המשך
-                <i class="fas fa-angle-left"></i>
+                <i className="fas fa-angle-left"></i>
               </div>
               <div
                 className="back"
@@ -434,7 +278,7 @@ const Register = ({ handleClose }) => {
                   setStage(state => state - 1);
                 }}
               >
-                <i class="fas fa-angle-right"></i> חזור
+                <i className="fas fa-angle-right"></i> חזור
               </div>
             </div>
           </BtnGroup>
