@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import Context from "../../Context";
-const Confirmation = ({ invitation, setAlreadyReplay }) => {
+
+const Confirmation = ({ invitation, setAlreadyReply }) => {
   const [amount, setAmount] = useState(1);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -29,9 +30,9 @@ const Confirmation = ({ invitation, setAlreadyReplay }) => {
         <p>אישור הגעה</p>
         <form
           onSubmit={e => {
-            localStorage.setItem("alreadyReply", name);
-            setAlreadyReplay(name);
             e.preventDefault();
+            localStorage.setItem("alreadyReply", name);
+            setAlreadyReply(name);
             onSubmit(true);
           }}
         >
