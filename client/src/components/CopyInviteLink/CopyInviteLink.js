@@ -6,7 +6,7 @@ const CopyInviteLink = ({ id }) => {
   const context = useContext(Context);
   const linkInput = useRef(null);
   const [isModelOpen, setIsModelOpen] = useState(false);
-  const link = `http://localhost:3000/invite/${context.userState.id}`;
+  const link = `https://diginvite.herokuapp.com/invite/${context.userState.id}`;
   const copyFunction = () => {
     linkInput.current.select();
     linkInput.current.setSelectionRange(0, 99999);
