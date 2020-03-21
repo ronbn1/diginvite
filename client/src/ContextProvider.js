@@ -187,6 +187,7 @@ const ContextProvider = props => {
   const getInvited = async id => {
     try {
       const invited = await axios.get(`/invited/${id}`);
+      console.log(invited);
       return invited;
     } catch (err) {
       setUserState(state => {
