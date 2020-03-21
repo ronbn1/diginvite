@@ -4,5 +4,7 @@
 4. hide all the password-----------------------------------------V
 5. take care of the images upload
 6. invention example page -------------------------------------- V
-7. add spinners
+7. add spinners -------------------------------------------------V
 8. add error handles---------------------------------------------V
+9. delete console log
+10. add edit option to add gust

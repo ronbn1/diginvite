@@ -18,9 +18,7 @@ const Confirmation = ({ invitation, setAlreadyReply }) => {
       status,
       user: invitation
     };
-    localStorage.setItem("alreadyReply", name);
-    localStorage.setItem("alreadyReplyTo", gustData.user);
-    setAlreadyReply(name);
+
     console.log(gustData);
     context.addInvited(gustData);
     setName("");
