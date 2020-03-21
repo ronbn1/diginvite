@@ -119,7 +119,8 @@ const Generator = ({ isOwner, invitation, example, data }) => {
         {!isOwner ? (
           <>
             <Navigation address={data.hallAddress} name={data.hallName} />
-            {alreadyReply ? (
+            {alreadyReply &&
+            localStorage.getItem("alreadyReplyTo") == data.id ? (
               <p className="alreadyReply">
                 תודה {alreadyReply}, תשובתך נשמרה !
               </p>

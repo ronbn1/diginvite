@@ -18,6 +18,10 @@ const Confirmation = ({ invitation, setAlreadyReply }) => {
       status,
       user: invitation
     };
+    localStorage.setItem("alreadyReply", name);
+    localStorage.setItem("alreadyReplyTo", gustData.user);
+    setAlreadyReply(name);
+    console.log(gustData);
     context.addInvited(gustData);
     setName("");
     setPhone("");
@@ -31,8 +35,7 @@ const Confirmation = ({ invitation, setAlreadyReply }) => {
         <form
           onSubmit={e => {
             e.preventDefault();
-            localStorage.setItem("alreadyReply", name);
-            setAlreadyReply(name);
+
             onSubmit(true);
           }}
         >

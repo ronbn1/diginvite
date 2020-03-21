@@ -158,6 +158,7 @@ const ContextProvider = props => {
   };
 
   const addInvited = async data => {
+    console.log(data);
     try {
       const invited = await axios.post(`/invited`, data, config);
       console.log(invited);
