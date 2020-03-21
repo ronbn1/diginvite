@@ -28,6 +28,8 @@ router.post("/", async (req, res) => {
     password,
     password2
   } = req.body;
+
+  const emailLower = email.toLowerCase();
   //Check input errors
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -36,11 +38,11 @@ router.post("/", async (req, res) => {
   if (password !== password2) return res.status(400).send("הסיסמאות לא זהות");
   //check if the email is already exist
   try {
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ emailLower });
     if (user) return res.status(400).send("האימייל קיים כבר במערכת");
 
     user = new User({
-      email,
+      emailLower,
       phone,
       groomName,
       brideName,
@@ -68,10 +70,10 @@ router.post("/", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-
+  const emailLower = email.toLowerCase();
   //check if the email exist
   try {
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ emailLower });
     if (!user) return res.status(400).send("האימייל או הסיסמא שגויים");
 
     const isPasswordMatch = await bcrypt.compare(
