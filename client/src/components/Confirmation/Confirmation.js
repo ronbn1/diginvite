@@ -19,7 +19,6 @@ const Confirmation = ({ invitation, setAlreadyReply }) => {
       user: invitation
     };
 
-    console.log(gustData);
     context.addInvited(gustData);
     setName("");
     setPhone("");

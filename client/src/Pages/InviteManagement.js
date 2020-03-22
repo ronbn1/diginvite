@@ -18,17 +18,14 @@ const InviteManagement = ({ match }) => {
   const fetchUser = async () => {
     const user = await context.getUserData(match.params.id);
     setData(user.data);
-    console.log(user.data._id);
     if (match.params.id === context.userState.id) {
       setIsOwner(true);
-      console.log(isOwner);
     }
     setLoading(false);
   };
 
   useEffect(() => {
     fetchUser();
-    console.log(data);
   }, [context.userState]);
 
   return (

@@ -92,7 +92,6 @@ router.post("/login", async (req, res) => {
 
 router.post("/userdata", async (req, res) => {
   try {
-    console.log(req.body.id);
     const user = await User.findById(req.body.id);
     res.send(user);
   } catch (err) {

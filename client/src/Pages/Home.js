@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
-import NavBar from "../components/NavBar/NavBar";
 import Routes from "../Routes/Routes";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MyAlert from "../components/MyAlert/MyAlert";
 import Context from "../Context";
-import styled from "styled-components";
 import SweetAlert from "react-bootstrap-sweetalert";
 import MySpinner from "../components/Spinner/Spinner";
 const Home = () => {

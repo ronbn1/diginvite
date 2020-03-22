@@ -4,8 +4,8 @@ import Model from "../Model/Model";
 import { Link } from "react-router-dom";
 import Context from "../../Context";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-
 import { LOGIN, REGISTER } from "../../utils/types";
+
 const NavBar = () => {
   const context = useContext(Context);
   const [modelIsOpen, setModelIsOpen] = useState(false);
@@ -41,8 +41,22 @@ const NavBar = () => {
           <Link target="_blank" to="/invite/example">
             <li>הזמנה לדגומא</li>
           </Link>
-          <li onClick={e => handleLoginIsOpen(true)}>התחברות</li>
-          <li onClick={e => setModelIsOpen(true)}>הרשמה</li>
+          <li
+            onClick={e => {
+              setMode(LOGIN);
+              setModelIsOpen(true);
+            }}
+          >
+            התחברות
+          </li>
+          <li
+            onClick={e => {
+              setMode(REGISTER);
+              setModelIsOpen(true);
+            }}
+          >
+            הרשמה
+          </li>
         </div>
         <div>
           <i className="fas fa-home"></i>
@@ -125,7 +139,6 @@ const NavBar = () => {
       </Nav>
       {modelIsOpen ? (
         <Model
-          login={true}
           handleClose={e => setModelIsOpen(false)}
           open={modelIsOpen}
           mode={mode}

@@ -6,5 +6,6 @@
 6. invention example page -------------------------------------- V
 7. add spinners -------------------------------------------------V
 8. add error handles---------------------------------------------V
-9. delete console log
+9. delete console log -------------------------------------------V
 10. add edit option to add gust
+11. delete non use

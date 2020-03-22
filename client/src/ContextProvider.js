@@ -90,7 +90,6 @@ const ContextProvider = props => {
     setSpinner(true);
     try {
       const user = await axios.post("/api/users/userdata", { id });
-      console.log(user);
       setSpinner(false);
       return user;
     } catch (err) {
@@ -102,7 +101,6 @@ const ContextProvider = props => {
     setSpinner(true);
     try {
       const user = await axios.put(`/api/users/${userState.id}`, data, config);
-      console.log(user);
       setUserState(state => {
         return {
           ...state,
@@ -134,7 +132,6 @@ const ContextProvider = props => {
         `/api/users/imageupdate/${userState.id}/${imageSrc}`,
         config
       );
-      console.log(user);
       setUserState(state => {
         return {
           ...state,
@@ -158,10 +155,8 @@ const ContextProvider = props => {
   };
 
   const addInvited = async data => {
-    console.log(data);
     try {
       const invited = await axios.post(`/invited`, data, config);
-      console.log(invited);
       if (invited.data.status === "מגיע") {
         addError(
           `תודה ${invited.data.name} ! אישרת הגעה עבוד ${invited.data.amount} אורחים`,
@@ -188,7 +183,6 @@ const ContextProvider = props => {
   const getInvited = async id => {
     try {
       const invited = await axios.get(`/invited/${id}`);
-      console.log(invited);
       return invited;
     } catch (err) {
       setUserState(state => {

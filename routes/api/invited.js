@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
     await invite.save();
     res.send(invite);
   } catch (err) {
-    console.log("error here");
+    console.log(err);
   }
 });
 
