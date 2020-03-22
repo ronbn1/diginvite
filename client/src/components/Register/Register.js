@@ -300,6 +300,9 @@ const Container = styled.div`
       text-align: center;
       span {
         margin: 1em;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
     .currentStage {
@@ -342,6 +345,7 @@ const Group = styled.div`
   display: flex;
   flex-direction: column;
   ._row {
+    margin: 0 auto;
     display: flex;
     max-width: 60em;
   }

@@ -39,7 +39,8 @@ const Model = ({ handleClose, open, data, mode, msg }) => {
 const MyDialog = styled(Dialog)`
   overflow: hidden !important;
   .MuiDialog-paperWidthXl {
-    min-width: 21em;
+    width: 50em;
+    max-width: 95vw;
   }
 
   .title {
