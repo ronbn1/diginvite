@@ -1,6 +1,6 @@
 # DIGInvite
 
-DIGInvite is a wedding invitation generator that built with the MERN stack, check out the demo [here](https://my-story-blog.herokuapp.com/).
+DIGInvite is a wedding invitation generator that built with the MERN stack, check out the demo [here](https://diginvite.herokuapp.com/).
 
 # Technologies
 
